@@ -8,3 +8,28 @@
 - NASA 문서는 원래 주석 처리된 비활성 파일로 그대로 보존했습니다. 활성화하지 않았습니다. 활성 프로젝트는 4개입니다.
 - Blog에는 글을 만들어 넣지 않았습니다. 현재 참고 사이트와 동일하게 상단 메뉴에는 노출하지 않습니다.
 - 참고 사이트 https://www.minsun.kim/ 의 2026-09-05 실시간 HTML 구조를 기준으로 구성했습니다. 캐시된 과거 홈의 Latest Project와 Recent Writing은 현재 홈에서 빠져 있어 적용하지 않았습니다.
+
+
+## Greenland case study — 2026-09-07
+
+Projects now holds the complete case study. `/project/` and the old NNA post redirect to `/projects/`. The historical post date is retained only to preserve its record; it is not presented as the project start date.
+
+Sources checked: office machine `jhbang@mull680:/mnt/ssd/data/_KB/` (HEAD c143791), particularly objective, site_qaarusuup, system, products, note_vs_code, claims and limits. The text sources match the local Project_KnowledgeBase reading copy. Claims.md is an unreviewed draft; do not quote its performance numbers as established results.
+
+Selected photo originals in `~/Downloads/Images_for_PersonalWebSite`:
+- IMG_4389.JPG: hero / field installation with slope context.
+- IMG_4166.HEIC: target slope (also explicitly selected as representative in the KB).
+- IMG_4387.JPG: instrument setup.
+- IMG_4383.JPG: hands working on electronics.
+- IMG_4163.HEIC: complete instrument and antenna paths.
+Photos decoded/orientation-corrected and exported to JPEG at max 1800 px, no content retouching. CSS controls the displayed crop.
+
+Research images: G11 capture 20260803_120011, current office `~/sdr/D1_deliver/20260803_120011_SAR_Qaarusuup_G11/`. Original PNGs copied without changing pixels, axes or scales:
+- sar-flat.png ← 1b_SAR_image_flat_uncorrected.png
+- sar-terrain.png ← 1_SAR_image_terrain_corrected.png (SHA256 ec47f363871cf4ebd81b3cec7fde4e8ee6de8a8c8d163721b1724d863df6054a)
+- sar-dem.png ← 3_overlay_SAR_on_DEM_with_waterline.png (SHA256 717711351b49ab7706822d8877f17e6770d7763ad83e141de3ea4d3711a0542c)
+The local SAR and overlay copies were hash-verified against the office machine.
+
+range-doppler.png re-renders the actual office binary `/mnt/ssd/data/20260803_Qaarusuup/Slope_az332/RDM_120011/USRP_L5Q_RDM_20260803_120011_prn11_3000msCPI_ECA_tap30.bin`. Same normalization as render_rdm.py: 10 log10(P/max(P)), [-45,0] dB; nearest-neighbour rendering, viridis palette; only the displayed y-range is limited to 0–3 km, explicitly stated in caption. 20 x 3 s CPI = 60 s integration; peak 1.3190868 km. Do not confuse this RDM integration with the approximately 597 s SAR aperture. This is not an image reconstruction from the averaged RDM; SAR uses the complex pulse data.
+
+Public wording intentionally excludes: deformation already measured; alerting/tsunami prediction; guaranteed 2027 deployment; unsupported funding/novelty/performance claims; absolute backscatter values and retired consensus sigma0 maps. The old campaign PDF contains an incorrect two-channel block diagram; the page instead uses simplified, correct antenna/receiver/computer paths confirmed in system.md. No raw IQ, private KB, or unreviewed numerical claim ledger is included in the website.

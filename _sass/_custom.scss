@@ -18,15 +18,15 @@ hr {
   margin: 2em 0;
 }
 /* Profile structure, extending the existing Minimal Mistakes theme. */
-.greenland-case { --case-line: #d8dce0; --case-muted: #5c6268; --case-measure: 680px; }
+.greenland-case { --case-line: #d8dce0; --case-muted: #5c6268; --case-measure: 100%; }
 .greenland-case figure { display: block; margin: 0; }
 .greenland-case img { display: block; width: 100%; height: auto; }
-.greenland-case p, .greenland-case li { line-height: 1.7; text-wrap: pretty; }
-.greenland-case h1, .greenland-case h2, .greenland-case h3 { text-wrap: balance; }
+.greenland-case p, .greenland-case li { line-height: 1.7; text-wrap: wrap; }
+.greenland-case h1, .greenland-case h2, .greenland-case h3 { text-wrap: wrap; }
 .profile-page .greenland-case h2 { font-size: clamp(1.45rem, 2.7vw, 2rem); letter-spacing: -.02em; line-height: 1.25; margin: 0 0 1.2rem; }
 .greenland-case h3 { font-size: 1.1rem; line-height: 1.4; margin: 0 0 .65rem; }
 .greenland-case .section-label { color: #5c6268; font-size: .8rem; margin: 0 0 1rem; }
-.greenland-case figcaption { display: block; text-align: left; margin: 0; padding: .8rem 0 0; font-size: .8rem; line-height: 1.6; color: #5c6268; }
+.greenland-case figcaption { width: 100%; max-width: none; text-wrap: wrap; display: block; text-align: left; margin: 0; padding: .8rem 0 0; font-size: .8rem; line-height: 1.6; color: #5c6268; }
 .greenland-case .case-hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: -.035em; margin: 0 0 1rem; }
 .case-deck { font-size: 1.1rem; margin-bottom: 1.25rem; }
 .case-cover img { aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 48%; }
@@ -43,7 +43,8 @@ hr {
 .case-field-end { max-width: var(--case-measure); margin: 1.8rem 0 0; }
 .greenland-case .case-wide { margin-top: 2.2rem; }
 .case-wide img { aspect-ratio: 16 / 9; object-fit: cover; }
-.greenland-case .case-diagram { margin: 3rem 0 0; max-width: 900px; }
+.greenland-case .case-diagram { margin: 3rem 0 0; }
+.case-diagram img { max-width: 900px; }
 .case-diagram img { border: 1px solid var(--case-line); }
 .case-diagram figcaption { max-width: var(--case-measure); }
 .greenland-case .case-chain-title { margin-top: 2.75rem; }
@@ -69,7 +70,7 @@ hr {
 .case-figure-button > span { display: inline-block; color: #1350c1; font: inherit; font-size: .75rem; padding: .5rem .7rem; border: 1px solid #d8dce0; background: white; margin: .4rem 0 0; }
 .case-figure-button:focus-visible { outline: 3px solid #1350c1; outline-offset: 5px; }
 .case-figure-button:hover > span { background: #eef3fc; }
-.case-result-main { max-width: 930px; margin-left: auto !important; margin-right: auto !important; }
+.case-result-main .case-figure-button { max-width: 930px; margin: 0 auto; }
 .case-comparison-intro { margin: 2.5rem 0 1.5rem; max-width: var(--case-measure); }
 .case-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .case-status { margin: 2rem 0 1rem; padding: 1.25rem 1.5rem; background: #f7f8f8; border-left: 3px solid #1350c1; }

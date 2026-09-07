@@ -14,7 +14,7 @@
   <section id="problem" class="case-section case-split">
     <div class="case-copy">
       <p class="section-label">01 / The problem</p>
-      <h2>Which slopes are creeping,<br>and which are accelerating?</h2>
+      <h2>Which slopes are creeping, and which are accelerating?</h2>
       <p>Retreating glaciers and thawing permafrost are destabilising rock slopes along Greenland’s fjords. When one of them fails into the water, the displaced wave can reach communities along the coast.</p>
       <p>Some of these slopes creep slowly and indefinitely. Others accelerate along a path to failure. Telling the two apart <em>before</em> failure is what decides which sites need attention, and it remains unresolved—no single technique measures the full range of displacement rates continuously and across a whole slope face. Depending on the site, reported rates span 0.05 to more than 5 metres per year.</p>
       <p>Satellite InSAR revisits too slowly to catch short-term acceleration and resolves only the line-of-sight component. Ground GNSS is continuous and precise, but measures single points. UAV photogrammetry maps the entire face, yet only within a short summer window. Active ground radar and LiDAR draw more power than a year-round Arctic site can supply.</p>
@@ -43,7 +43,7 @@
     <div class="case-split">
       <div class="case-copy">
         <p class="section-label">03 / My research</p>
-        <h2>From detecting a slope<br>to measuring how it moves.</h2>
+        <h2>From detecting a slope to measuring how it moves.</h2>
         <p>Within the NNA Greenland Hazards Project, my work is the radar system and the signal processing behind it. The aim is not only to observe an unstable slope, but to measure quantitatively how that rock is deforming.</p>
         <p>The system transmits nothing of its own. It reuses navigation satellites that already illuminate the slope: one antenna records the direct signal, from which the receiver reconstructs a clean reference waveform, while a second antenna points at the rock face and records the reflection. With no transmitter to power, the instrument can stay out where there is no radar infrastructure.</p>
         <p>Many satellites are overhead at once, so the same slope is seen from many directions at the same time—the geometric diversity needed to resolve displacement in three dimensions rather than along a single line of sight.</p>
@@ -55,16 +55,18 @@
       <figcaption>One transmitter of opportunity, two receiving paths: the direct signal is the reference, the reflection carries the slope.</figcaption>
     </figure>
     <h3 class="case-chain-title">The receiver chain</h3>
+    <p>The sky-facing antenna receives the direct GNSS signal, while the slope-facing antenna receives its reflection. The USRP B210 converts these analogue electrical signals into synchronized digital IQ samples, which the single-board computer currently stores for later processing.</p>
     <div class="case-chain">
       <div class="case-chain-pair">
         <div class="case-chain-box"><strong>Sky-facing antenna</strong><span>Direct signal → reference channel</span></div>
         <div class="case-chain-box"><strong>Slope-facing antenna</strong><span>Reflected signal → surveillance channel</span></div>
       </div>
       <span class="case-chain-arrow" aria-hidden="true">→</span>
-      <div class="case-chain-box"><strong>USRP B210</strong><span>Both channels sampled on one clock</span></div>
+      <div class="case-chain-box"><strong>USRP B210</strong><span>Analogue signals → digital IQ, on one clock</span></div>
       <span class="case-chain-arrow" aria-hidden="true">→</span>
       <div class="case-chain-box"><strong>Single-board computer</strong><span>Scheduled raw IQ recording, unattended</span></div>
     </div>
+    <p>The planned next step is to run the processing chain on the single-board computer and send processed results back to my home institution. Target outputs include interferograms from repeat acquisitions and quantitative slope-displacement estimates, once phase stability and the displacement retrieval have been validated.</p>
   </section>
 
   <section id="workflow" class="case-section">
@@ -102,7 +104,7 @@
 
   <section id="direction" class="case-section case-direction">
     <p class="section-label">07 / What next</p>
-    <h2>From a prototype demonstration<br>to a full autonomous deployment.</h2>
+    <h2>From a prototype demonstration to a full autonomous deployment.</h2>
     <div class="case-next">
       <div>
         <h3>2026 field campaign — prototype demonstration</h3>

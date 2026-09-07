@@ -55,7 +55,6 @@
       <figcaption>One transmitter of opportunity, two receiving paths: the direct signal is the reference, the reflection carries the slope.</figcaption>
     </figure>
     <h3 class="case-chain-title">The receiver chain</h3>
-    <p>The sky-facing antenna receives the direct GNSS signal, while the slope-facing antenna receives its reflection. The USRP B210 converts these analogue electrical signals into synchronized digital IQ samples, which the single-board computer currently stores for later processing.</p>
     <div class="case-chain">
       <div class="case-chain-pair">
         <div class="case-chain-box"><strong>Sky-facing antenna</strong><span>Direct signal → reference channel</span></div>
@@ -66,6 +65,7 @@
       <span class="case-chain-arrow" aria-hidden="true">→</span>
       <div class="case-chain-box"><strong>Single-board computer</strong><span>Scheduled raw IQ recording, unattended</span></div>
     </div>
+    <p>The sky-facing antenna receives the direct GNSS signal, while the slope-facing antenna receives its reflection. The USRP B210 converts these analogue electrical signals into synchronized digital IQ samples, which the single-board computer currently stores for later processing.</p>
     <p>The planned next step is to run the processing chain on the single-board computer and send processed results back to my home institution. Target outputs include interferograms from repeat acquisitions and quantitative slope-displacement estimates, once phase stability and the displacement retrieval have been validated.</p>
   </section>
 

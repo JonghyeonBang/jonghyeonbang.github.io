@@ -1,12 +1,11 @@
 <article class="greenland-case">
   <header class="case-hero">
     <p class="section-label">Projects / Greenland field research</p>
-    <h1>NNA Greenland<br>Hazards Project</h1>
+    <h1>NNA Greenland Hazards Project</h1>
     <p class="case-deck">Ground-based GNSS passive radar for observing unstable rock slopes.</p>
-    <div class="case-context"><span>Qaarusuup Qaqqaa · Nuuk fjord</span><span>Field campaign · July–August 2026</span><span>Radar systems · Signal processing</span></div>
     <figure class="case-cover">
-      <img src="{{ '/assets/images/greenland/field-team.jpg' | relative_url }}" alt="Field team installing radar equipment beside a solar panel, with the rock slope across the Greenland fjord." width="1800" height="1350" fetchpriority="high">
-      <figcaption>A field instrument, an open-water path, and the rock face on the opposite shore.</figcaption>
+      <img src="{{ '/assets/images/greenland/hero-fieldwork.jpg' | relative_url }}" alt="Setting up the GNSS passive radar instrument on the shore of a Greenland fjord, with the target rock slope rising across the water behind it." width="1536" height="864" fetchpriority="high">
+      <figcaption>The receiver on the near shore, pointed across open water at the rock face it observes.</figcaption>
     </figure>
   </header>
 
@@ -15,9 +14,10 @@
   <section id="problem" class="case-section case-split">
     <div class="case-copy">
       <p class="section-label">01 / The problem</p>
-      <h2>Steep slopes.<br>Consequences across the fjord.</h2>
-      <p>When a large rock slope collapses into a fjord, the displaced water can generate a tsunami and threaten communities along the coast. Understanding how unstable slopes change before failure is an important part of understanding that hazard.</p>
-      <p>But these rock faces are difficult to reach. Monitoring needs to work across water, on steep terrain, and beyond a short field visit.</p>
+      <h2>Which slopes are creeping,<br>and which are accelerating?</h2>
+      <p>Retreating glaciers and thawing permafrost are destabilising rock slopes along Greenland’s fjords. When one of them fails into the water, the displaced wave can reach communities along the coast.</p>
+      <p>Some of these slopes creep slowly and indefinitely. Others accelerate along a path to failure. Telling the two apart <em>before</em> failure is what decides which sites need attention, and it remains unresolved—no single technique measures the full range of displacement rates continuously and across a whole slope face. Depending on the site, reported rates span 0.05 to more than 5 metres per year.</p>
+      <p>Satellite InSAR revisits too slowly to catch short-term acceleration and resolves only the line-of-sight component. Ground GNSS is continuous and precise, but measures single points. UAV photogrammetry maps the entire face, yet only within a short summer window. Active ground radar and LiDAR draw more power than a year-round Arctic site can supply.</p>
       <p class="case-note">Qaarusuup Qaqqaa is included in Greenland’s <a href="https://www.arcgis.com/home/item.html?id=3bca367785cd4a9f8e1f642669d3ad7b" target="_blank" rel="noopener noreferrer">inventory of unstable slopes and registered mass movements</a>.</p>
     </div>
     <figure class="case-portrait">
@@ -27,27 +27,43 @@
   </section>
 
   <section id="fieldwork" class="case-section">
-    <div class="case-section-intro"><p class="section-label">02 / Fieldwork in Greenland</p><h2>Making the measurement possible.</h2><p>During the July 10–August 9, 2026 campaign, I deployed GNSS passive radar equipment and collected data from slopes reported to be unstable. The results below come from the Qaarusuup deployment, August 1–4.</p></div>
+    <div class="case-section-intro"><p class="section-label">02 / Fieldwork in Greenland</p><h2>Making the measurement possible.</h2><p>The 2026 campaign ran from 10 July to 9 August, across several Greenland slopes reported as unstable. This season was a <strong>prototype trial</strong>: build the instrument, get it recording in the field, and find out whether the measurement works at all. Everything shown below comes from one of those sites—Qaarusuup, 1–4 August.</p></div>
     <div class="case-field-grid">
-      <figure><img src="{{ '/assets/images/greenland/installation.jpg' | relative_url }}" alt="Adjusting the tripod-mounted radar instrument on rocky ground beside the fjord." loading="lazy" width="1350" height="1800"><figcaption><strong>Install and orient.</strong> Positioning the instrument to receive reflections from the slope across the water.</figcaption></figure>
+      <figure><img src="{{ '/assets/images/greenland/installation.jpg' | relative_url }}" alt="Anchoring the tripod-mounted radar instrument to bedrock with a cordless drill, beside the fjord." loading="lazy" width="1350" height="1800"><figcaption><strong>Anchor and orient.</strong> Fixing the tripod to bedrock and aiming the antenna so the receiver sees reflections from the unstable slope across the water.</figcaption></figure>
       <figure><img src="{{ '/assets/images/greenland/electronics.jpg' | relative_url }}" alt="Hands working on the receiver electronics and wiring inside the open field enclosure." loading="lazy" width="1350" height="1800"><figcaption><strong>Connect and check.</strong> Integrating the receiver, onboard computer, cabling, and power into a field system.</figcaption></figure>
     </div>
-    <p class="case-field-end">At Qaarusuup, the instrument remained on site after installation, recording scheduled captures without an operator beside it. Reliable timing, power, storage, and signal quality are as much a part of this research as the image-processing algorithms.</p>
+    <p class="case-field-end">Once installed, the instrument stayed on site and recorded on a schedule with nobody beside it. Timing, power, storage, and signal quality decide whether there is any data to process. In this project they are as much a part of the research as the algorithms.</p>
+    <figure class="case-wide">
+      <img src="{{ '/assets/images/greenland/unattended.jpg' | relative_url }}" alt="The sealed radar instrument standing alone on bedrock, its slope-facing antenna aimed across the ice-strewn fjord at the rock face." loading="lazy" width="1800" height="1012">
+      <figcaption>A first-season prototype, left recording on its own at Qaarusuup: reference antenna on top, slope-facing antenna aimed across the fjord. This build exists to prove the measurement, not to survive a winter—that is next year’s system.</figcaption>
+    </figure>
   </section>
 
-  <section id="research" class="case-section case-split case-system">
-    <figure class="case-portrait"><img src="{{ '/assets/images/greenland/radar-instrument.jpg' | relative_url }}" alt="Open radar instrument enclosure with electronics, a sky-facing reference antenna above it, and a slope-facing helical antenna." loading="lazy" width="1350" height="1800"><figcaption>Two antenna paths, one synchronized receiver, and an onboard computer.</figcaption></figure>
-    <div class="case-copy">
-      <p class="section-label">03 / My research</p>
-      <h2>Use the satellites.<br>Build the instrument.</h2>
-      <p>Within the NNA Greenland Hazards Project, my work focuses on the radar system and the signal processing needed to observe unstable rock slopes.</p>
-      <p>The system does not transmit its own radar pulse. It listens to navigation satellites: one antenna records their direct signals, while another points toward the slope to record reflections. Comparing the two provides a reference for recovering weak echoes.</p>
-      <div class="case-signal-path" aria-label="Simplified receiver signal paths">
-        <div><strong>Sky-facing antenna</strong><span>Direct GNSS signal → reference channel</span></div>
-        <div><strong>Slope-facing antenna</strong><span>Reflected GNSS signal → surveillance channel</span></div>
-        <p><strong>USRP B210</strong><span>Two synchronized channels</span><span class="case-path-arrow" aria-hidden="true">↓</span><strong>Jetson Orin Nano</strong><span>Scheduled raw IQ recording</span></p>
+  <section id="research" class="case-section case-research">
+    <div class="case-split">
+      <div class="case-copy">
+        <p class="section-label">03 / My research</p>
+        <h2>From detecting a slope<br>to measuring how it moves.</h2>
+        <p>Within the NNA Greenland Hazards Project, my work is the radar system and the signal processing behind it. The aim is not only to observe an unstable slope, but to measure quantitatively how that rock is deforming.</p>
+        <p>The system transmits nothing of its own. It reuses navigation satellites that already illuminate the slope: one antenna records the direct signal, from which the receiver reconstructs a clean reference waveform, while a second antenna points at the rock face and records the reflection. With no transmitter to power, the instrument can stay out where there is no radar infrastructure.</p>
+        <p>Many satellites are overhead at once, so the same slope is seen from many directions at the same time—the geometric diversity needed to resolve displacement in three dimensions rather than along a single line of sight.</p>
       </div>
-      <p class="case-note">The field computer records the data. Satellite tracking and image formation take place later, in the processing pipeline.</p>
+      <figure class="case-portrait"><img src="{{ '/assets/images/greenland/radar-instrument.jpg' | relative_url }}" alt="Open radar instrument enclosure with electronics, a sky-facing reference antenna above it, and a slope-facing helical antenna." loading="lazy" width="1350" height="1800"><figcaption>Two antenna paths, one synchronized receiver, and an onboard computer.</figcaption></figure>
+    </div>
+    <figure class="case-diagram">
+      <img src="{{ '/assets/images/greenland/geometry-diagram.png' | relative_url }}" alt="Diagram: a moving GNSS satellite sends a direct signal down to the receiver on the near shore and also illuminates the rock slope across the fjord, whose reflection travels back to the same receiver." loading="lazy" width="1584" height="993">
+      <figcaption>One transmitter of opportunity, two receiving paths: the direct signal is the reference, the reflection carries the slope.</figcaption>
+    </figure>
+    <h3 class="case-chain-title">The receiver chain</h3>
+    <div class="case-chain">
+      <div class="case-chain-pair">
+        <div class="case-chain-box"><strong>Sky-facing antenna</strong><span>Direct signal → reference channel</span></div>
+        <div class="case-chain-box"><strong>Slope-facing antenna</strong><span>Reflected signal → surveillance channel</span></div>
+      </div>
+      <span class="case-chain-arrow" aria-hidden="true">→</span>
+      <div class="case-chain-box"><strong>USRP B210</strong><span>Both channels sampled on one clock</span></div>
+      <span class="case-chain-arrow" aria-hidden="true">→</span>
+      <div class="case-chain-box"><strong>Single-board computer</strong><span>Scheduled raw IQ recording, unattended</span></div>
     </div>
   </section>
 
@@ -70,7 +86,7 @@
   <section id="results" class="case-section">
     <div class="case-section-intro"><p class="section-label">05 / Research outputs · preliminary</p><h2>From a return to a terrain-referenced image.</h2><p>The moving GNSS satellite provides a synthetic aperture while the ground receiver stays fixed. Here, approximately 597 seconds of phase-preserving observations are combined into a SAR image.</p></div>
     <figure class="case-result-main">{% include project-figure.html file="sar-dem.png" alt="Measured G11 SAR intensity over ArcticDEM hillshade, showing focused returns along the opposite side of the fjord. A cyan line marks the DEM waterline." %}<figcaption><strong>Focused radar intensity over ArcticDEM.</strong> G11, August 3, 2026. The triangle marks the receiver; the cyan line is the DEM-derived waterline. This is a radar-intensity image, not a displacement map.</figcaption></figure>
-    <div class="case-comparison-intro"><h3>Why terrain belongs in the processing.</h3><p>A flat-ground assumption and a terrain-aware reconstruction place the same echoes differently. These outputs use the same observation and colour scale; incorporating elevation changes the geometry used to focus the image.</p></div>
+    <div class="case-comparison-intro"><h3>Why terrain belongs in the processing.</h3><p>To place an echo on the map, the processor first has to be told where the ground is. Assume the ground is flat, and everything coming back from the slope piles onto a single arc—the set of flat-plane points that happen to sit at the right distance. Give the processor the real height of each pixel from ArcticDEM instead, and those same echoes spread out across the rock face they actually came from.</p><p>Both images below are built from the same recording and drawn on the same colour scale. The only thing that changes is the terrain the processor was told to assume.</p></div>
     <div class="case-comparison">
       <figure>{% include project-figure.html file="sar-flat.png" alt="G11 SAR reconstruction with a flat-ground assumption, displayed on the original common intensity scale." %}<figcaption><strong>Flat-ground assumption</strong><br>No terrain correction.</figcaption></figure>
       <figure>{% include project-figure.html file="sar-terrain.png" alt="G11 SAR reconstruction using ArcticDEM elevation per image pixel, on the same intensity scale as the flat-ground output." %}<figcaption><strong>Terrain-aware reconstruction</strong><br>ArcticDEM elevation in back-projection.</figcaption></figure>
@@ -81,10 +97,32 @@
 
   <section class="case-section case-role">
     <p class="section-label">06 / My role</p><h2>Engineering the connection between fieldwork and measurement.</h2>
-    <div class="case-role-grid"><p>I develop and integrate the ground-based GNSS passive radar system: antennas, software-defined radio, single-board computing, and the recording workflow. In Greenland, that work extends to installing the instrument and collecting usable observations.</p><p>I also develop the processing chain that follows the data home—from raw IQ and satellite tracking to range–Doppler analysis, SAR image formation, and terrain integration. My contribution is this instrument-to-image workflow within the broader hazards project.</p></div>
+    <div class="case-role-grid"><p>I develop and integrate the ground-based GNSS passive radar system: antennas, software-defined radio, single-board computing, and the recording workflow. In Greenland, that work extends to installing the instrument and collecting usable observations.</p><p>I also develop the processing chain that follows the data home—from raw IQ and satellite tracking to range–Doppler analysis, SAR image formation, and terrain integration. My contribution is that whole path—from an instrument on a tripod to quantitative information about the rock face, and, as the system matures, to a measurement of how that slope is moving.</p></div>
   </section>
 
-  <section id="direction" class="case-section case-direction"><p class="section-label">07 / Research direction</p><h2>Toward repeated observations of changing slopes.</h2><p>The next step is to move from a field demonstration to reliable repeat measurements: improve autonomous operation, test coherence between acquisitions, and investigate whether phase differences can resolve slope deformation. The aim is a practical ground-based observation capability for places that are difficult to monitor in person.</p></section>
+  <section id="direction" class="case-section case-direction">
+    <p class="section-label">07 / What next</p>
+    <h2>From a prototype demonstration<br>to a full autonomous deployment.</h2>
+    <div class="case-next">
+      <div>
+        <h3>2026 field campaign — prototype demonstration</h3>
+        <ul>
+          <li>Deployed a prototype GNSS passive radar at Qaarusuup.</li>
+          <li>Collected raw IQ data and demonstrated range–Doppler, SAR imaging, and backscatter mapping.</li>
+          <li>Established the feasibility of remotely observing the rock slope.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>2027 field campaign — full autonomous deployment</h3>
+        <ul>
+          <li>Build and deploy the complete autonomous monitoring system in July–August 2027.</li>
+          <li>Harden the system for a year of unattended polar operation: power through the winter, an enclosure and antennas that tolerate ice, wind and freeze–thaw, and timing stable enough to compare acquisitions months apart.</li>
+          <li>Leave the system in place for one year for repeated observations.</li>
+          <li>Target: continuous repeat-pass SAR / interferometric measurements for slope deformation monitoring.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </article>
 <dialog class="case-lightbox" aria-label="Enlarged research figure"><button type="button" class="case-lightbox-close" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog>
 <script src="{{ '/assets/js/greenland-project.js' | relative_url }}" defer></script>

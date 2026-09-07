@@ -17,19 +17,26 @@ Projects now holds the complete case study. `/project/` and the old NNA post red
 Sources checked: office machine `jhbang@mull680:/mnt/ssd/data/_KB/` (HEAD c143791), particularly objective, site_qaarusuup, system, products, note_vs_code, claims and limits. The text sources match the local Project_KnowledgeBase reading copy. Claims.md is an unreviewed draft; do not quote its performance numbers as established results.
 
 Selected photo originals in `~/Downloads/Images_for_PersonalWebSite`:
-- IMG_4389.JPG: hero / field installation with slope context.
+- IMG_4386.JPG: hero (2026-09-07). Instrument being set up with the target slope behind it; 16:9 crop y=400..1264 of the 1536x2048 original, no retouching. Replaces IMG_4389.JPG, whose frame was dominated by the solar panel.
+- IMG_4178.HEIC: the unattended instrument on site; 16:9 crop y=1150..3559 of 4284x5712, resampled to 1800x1012.
+- IMG_4389.JPG: earlier hero / field installation with slope context. No longer used on the page; field-team.jpg is retained in the repo but unreferenced.
 - IMG_4166.HEIC: target slope (also explicitly selected as representative in the KB).
 - IMG_4387.JPG: instrument setup.
 - IMG_4383.JPG: hands working on electronics.
 - IMG_4163.HEIC: complete instrument and antenna paths.
 Photos decoded/orientation-corrected and exported to JPEG at max 1800 px, no content retouching. CSS controls the displayed crop.
 
-Research images: G11 capture 20260803_120011, current office `~/sdr/D1_deliver/20260803_120011_SAR_Qaarusuup_G11/`. Original PNGs copied without changing pixels, axes or scales:
-- sar-flat.png ← 1b_SAR_image_flat_uncorrected.png
-- sar-terrain.png ← 1_SAR_image_terrain_corrected.png (SHA256 ec47f363871cf4ebd81b3cec7fde4e8ee6de8a8c8d163721b1724d863df6054a)
-- sar-dem.png ← 3_overlay_SAR_on_DEM_with_waterline.png (SHA256 717711351b49ab7706822d8877f17e6770d7763ad83e141de3ea4d3711a0542c)
-The local SAR and overlay copies were hash-verified against the office machine.
+Research images: G11 capture 20260803_120011. **Re-rendered 2026-09-07 with the corrected colour-bar label only.** The deliverable figures label the bar "SAR power [dB, common absolute scale]", which is internal shorthand: in SAR the squared magnitude is INTENSITY, and these figures plot 10 log10(P). The correct label, already adopted for the campaign deck v3, is "Radar intensity [dB]".
+
+Re-rendered on the office machine with the deliverable command from `~/sdr/d1_deliver.sh` reproduced verbatim (same `$REF/sar_overlay.py`, same `--npz`, `--sim`, `--dem`, `--abs-db 136 164`, same `--tag`/`--subtitle`), adding only `--clabel "Radar intensity [dB]"`. That flag is documented in the script as "Cosmetic only; nothing else changes."
+
+Control run: the re-rendered PNGs were differenced pixel-by-pixel against the originals. All three differ in exactly 5,927 pixels, confined to x 1860-1887, y 517-1083 of 2000x1600 — the rotated colour-bar label strip. Every other pixel is bit-identical. The images themselves, their axes and their scales are therefore unchanged.
+- sar-flat.png ← 1b_SAR_image_flat_uncorrected.png, re-rendered
+- sar-terrain.png ← 1_SAR_image_terrain_corrected.png, re-rendered (SHA256 d5acdd73d00b7aa615d54ca91c39874852019485f92bf9aea7f9f66f390678fe; pre-relabel original was ec47f363871cf4ebd81b3cec7fde4e8ee6de8a8c8d163721b1724d863df6054a)
+- sar-dem.png ← 3_overlay_SAR_on_DEM_with_waterline.png, re-rendered (SHA256 6489bc241594ab33faeea71d5269eb00706162c03028f0cfa0147fb55b9231e3; pre-relabel original was 717711351b49ab7706822d8877f17e6770d7763ad83e141de3ea4d3711a0542c)
+
+geometry-diagram.png is the figure from slide 3 of the campaign PDF, "What the passive radar measures", extracted losslessly as the single embedded raster on that page (pdfimages, 1584x993, unmodified). This is NOT the slide 5 "System overview" two-channel block diagram, which is the one known to be wrong and is still excluded. Slide 3 shows only observation geometry — direct path, satellite-to-slope, slope-to-receiver, and the satellite's motion — and is correct. It replaced a hand-drawn inline SVG of the same geometry.
 
 range-doppler.png re-renders the actual office binary `/mnt/ssd/data/20260803_Qaarusuup/Slope_az332/RDM_120011/USRP_L5Q_RDM_20260803_120011_prn11_3000msCPI_ECA_tap30.bin`. Same normalization as render_rdm.py: 10 log10(P/max(P)), [-45,0] dB; nearest-neighbour rendering, viridis palette; only the displayed y-range is limited to 0–3 km, explicitly stated in caption. 20 x 3 s CPI = 60 s integration; peak 1.3190868 km. Do not confuse this RDM integration with the approximately 597 s SAR aperture. This is not an image reconstruction from the averaged RDM; SAR uses the complex pulse data.
 
-Public wording intentionally excludes: deformation already measured; alerting/tsunami prediction; guaranteed 2027 deployment; unsupported funding/novelty/performance claims; absolute backscatter values and retired consensus sigma0 maps. The old campaign PDF contains an incorrect two-channel block diagram; the page instead uses simplified, correct antenna/receiver/computer paths confirmed in system.md. No raw IQ, private KB, or unreviewed numerical claim ledger is included in the website.
+Public wording intentionally excludes: deformation already measured; alerting/tsunami prediction; guaranteed 2027 deployment; unsupported funding/novelty/performance claims; absolute backscatter values and retired consensus sigma0 maps. The old campaign PDF's slide 5 contains an incorrect two-channel block diagram and is still excluded; the receiver chain shown on the page is instead the simplified, correct antenna/receiver/computer path confirmed in system.md. (Slide 3's geometry figure is a different, correct figure and is used — see above.) No raw IQ, private KB, or unreviewed numerical claim ledger is included in the website.

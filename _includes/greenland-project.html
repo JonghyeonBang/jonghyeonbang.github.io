@@ -89,6 +89,11 @@
       <figure>{% include project-figure.html file="sar-flat.png" alt="G11 SAR reconstruction with a flat-ground assumption, displayed on the original common intensity scale." %}<figcaption><strong>Flat-ground assumption</strong><br>No terrain correction.</figcaption></figure>
       <figure>{% include project-figure.html file="sar-terrain.png" alt="G11 SAR reconstruction using ArcticDEM elevation per image pixel, on the same intensity scale as the flat-ground output." %}<figcaption><strong>Terrain-aware reconstruction</strong><br>ArcticDEM elevation in back-projection.</figcaption></figure>
     </div>
+    <details class="research-details">
+      <summary>Acquisition and validation details</summary>
+      <dl class="acquisition-facts"><div><dt>Receiver</dt><dd>USRP B210, two synchronized channels</dd></div><div><dt>Sampling</dt><dd>25 MS/s, 8-bit IQ</dd></div><div><dt>Recording</dt><dd>600 seconds per capture</dd></div></dl>
+      <p>Image formation was checked against a phase-scrambled control and with flat-ground versus ArcticDEM reconstructions. The range-compressed pulses were also checked against the Doppler-processing output.</p>
+    </details>
     <p class="case-note">Figures retain the original research axes and scales. Terrain: ArcticDEM 2 m, v4.1. Select a figure to enlarge it.</p>
   </section>
 

@@ -3,6 +3,7 @@ layout: publication
 title: "A Fast and Accurate Convolutional Neural Network for LPI Radar Waveform Recognition"
 date: 2022-09-28
 display_date: 2022-09-28
+author_role: "Coauthor"
 venue: "19th European Radar Conference (EuRAD)"
 publication_type: conference
 summary: "Recognizing low-probability-of-intercept radar waveforms using a fast and accurate convolutional neural network."

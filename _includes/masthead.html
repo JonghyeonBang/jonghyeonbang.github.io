@@ -9,7 +9,7 @@
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">
           {{ site.masthead_title | default: site.title }}
-          <span class="site-last-update">[Last Update: <time datetime="{{ site.data.site_meta.last_updated }}">{{ site.data.site_meta.last_updated | date: "%y.%m.%d" }}</time>]</span>
+          <span class="site-last-update">[Last Update: <time datetime="{{ site.data.site_meta.last_updated }}">{{ site.data.site_meta.last_updated | date: "%y.%m.%d." }}</time>]</span>
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
         <ul class="visible-links">

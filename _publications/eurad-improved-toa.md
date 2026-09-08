@@ -3,6 +3,7 @@ layout: publication
 title: "Improved TOA and Pulse Width Estimation for Wideband Signal in Electronic Warfare Systems"
 date: 2022-09-28
 display_date: 2022-09-28
+author_role: "First author"
 venue: "19th European Radar Conference (EuRAD)"
 publication_type: conference
 summary: "Estimating time of arrival and pulse width from wideband signals to support electronic warfare receiver processing."

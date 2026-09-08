@@ -5,4 +5,4 @@ My current research focuses on ground-based GNSS passive radar for monitoring un
 
 Before Virginia Tech, I received my B.S. and M.S. degrees from the Department of Electronics Engineering at [Pusan National University](https://www.pusan.ac.kr/eng/Main.do) in South Korea and spent two years at the [Agency for Defense Development](https://www.add.re.kr/eps), where I worked on a SAR jamming project. That experience shaped my interest in radar signal processing, practical system development, and the connection between algorithms and real-world measurements.
 
-Want to know more? Take a look at my CV!
+Want to know more? Take a look at [my CV](https://docs.google.com/document/d/1ECVwVOK6XeknRG3mwFJrAzX-magpqHUxvLg1A5z8dk4/edit?usp=sharing).

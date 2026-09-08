@@ -3,6 +3,7 @@ layout: publication
 title: "Deceptive Jamming for Spaceborne SAR Using Estimated Signal Parameters and Intercepted Signal Phase"
 date: 2024-11-14
 display_date: 2024-11-14
+author_role: "Corresponding author"
 venue: "IEEE Access"
 summary: "Generating false targets at intended locations within a spaceborne SAR beam footprint by estimating signal parameters and exploiting the phase of intercepted SAR signals."
 contributions:

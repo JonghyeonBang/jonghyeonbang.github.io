@@ -3,6 +3,7 @@ layout: publication
 title: "Accurate Estimation of LPI Radar Pulse Train Parameters via Change Point Detection"
 date: 2023-02-06
 display_date: 2023-02-06
+author_role: "First author"
 venue: "IEEE Access"
 summary: "Estimating the time of arrival, pulse width, and pulse repetition interval of weak LPI radar pulse trains across multiple modulation schemes."
 contributions:

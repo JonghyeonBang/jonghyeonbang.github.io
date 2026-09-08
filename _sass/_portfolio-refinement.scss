@@ -1,0 +1,71 @@
+/* Local design study: deep blue, restrained teal, and pale surfaces. */
+:root {
+  --portfolio-ink: #193d50;
+  --portfolio-accent: #246b76;
+  --portfolio-line: #d4e2e6;
+  --portfolio-tint: #f1f7f8;
+}
+.masthead { border-top: 3px solid var(--portfolio-accent); border-bottom-color: var(--portfolio-line); }
+.greedy-nav .site-title { color: var(--portfolio-ink); }
+.greedy-nav .visible-links a::before { background: var(--portfolio-accent); }
+.profile-page h1, .profile-page h2, .profile-page h3 { color: var(--portfolio-ink); }
+.profile-page a { color: #225b78; }
+.profile-page a:hover { color: #123e54; }
+.profile-page .section-label { color: var(--portfolio-accent); }
+.profile-page a:focus-visible, .profile-page button:focus-visible,
+.research-details summary:focus-visible { outline: 3px solid #246b76; outline-offset: 4px; }
+
+/* Keep the familiar profile layout, with a little surface and hierarchy. */
+.profile-hero { padding-bottom: 2rem; border-bottom: 1px solid var(--portfolio-line); }
+.profile-card { background: linear-gradient(150deg, #f1f7f8, #fff 75%); border-color: var(--portfolio-line); border-top: 3px solid var(--portfolio-accent); box-shadow: 0 4px 18px rgba(25,61,80,.04); }
+.profile-actions .btn { border: 1px solid var(--portfolio-line); border-radius: 5px; background: #fff; color: var(--portfolio-ink); }
+.profile-actions .btn:hover { background: #e7f1f3; color: var(--portfolio-ink); }
+.profile-social-links a { border-color: var(--portfolio-line); background: #fff; }
+.profile-social-links a:hover { background: #e7f1f3; border-color: var(--portfolio-accent); }
+.about-field-photo img, .case-cover img, .case-wide img { border-radius: 6px; }
+.profile-focus { background: var(--portfolio-tint); border-left: 3px solid var(--portfolio-accent); padding: 1.1rem 1.3rem; border-radius: 0 6px 6px 0; }
+.profile-focus h2 { margin-top: 0; }
+.profile-focus ul { margin-bottom: 0; }
+.profile-tools { display: flex; flex-wrap: wrap; align-items: baseline; gap: .65rem 1rem; margin-top: 1.3rem; font-size: .8rem; }
+.profile-tools > span { font-weight: 700; color: var(--portfolio-ink); }
+.profile-tools ul { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; padding: 0; margin: 0; }
+.profile-tools li { margin: 0; border: 1px solid var(--portfolio-line); border-radius: 4px; padding: .2rem .65rem; background: #f9fbfc; }
+.profile-latest section { border: 1px solid var(--portfolio-line); border-top: 3px solid var(--portfolio-accent); border-radius: 5px; padding: 1.2rem; }
+
+/* Section links look like understated controls, and remain easy to tap. */
+.case-nav { gap: .6rem; padding: 1.25rem 0; border-bottom-color: var(--portfolio-line); }
+.case-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: .45rem .9rem; border: 1px solid #bfd2d9; border-radius: 5px; background: #f4f8fa; color: #244e62; text-decoration: none; transition: background-color .15s, border-color .15s; }
+.case-nav a:hover, .case-nav a:focus-visible { background: #e3eff2; border-color: #246b76; color: #173b4e; text-decoration: none; }
+.case-section { border-bottom-color: var(--portfolio-line); }
+.greenland-case .section-label { color: var(--portfolio-accent); }
+.case-chain-box { border-color: var(--portfolio-line); border-radius: 5px; background: var(--portfolio-tint); }
+.case-chain-arrow { color: var(--portfolio-accent); }
+.case-result-block { border-color: var(--portfolio-line); }
+.greenland-case .case-result-block > h3 { border-left: 3px solid var(--portfolio-accent); padding-left: .75rem; }
+.case-result-use { padding: 1rem 1.15rem; border-radius: 5px; background: var(--portfolio-tint); }
+.case-figure-button > span { color: var(--portfolio-ink); border-color: var(--portfolio-line); border-radius: 4px; }
+.case-figure-button:hover > span { background: #e7f1f3; }
+.case-next-plans > div { padding: 1.2rem; border: 1px solid var(--portfolio-line); border-top: 3px solid var(--portfolio-accent); border-radius: 5px; background: #f8fbfc; }
+.research-details { margin-top: 1.8rem; border: 1px solid var(--portfolio-line); border-radius: 5px; background: #f8fbfc; }
+.research-details summary { cursor: pointer; padding: .9rem 1.1rem; font-size: .85rem; font-weight: 700; color: var(--portfolio-ink); }
+.research-details[open] summary { border-bottom: 1px solid var(--portfolio-line); }
+.research-details > p { margin: 1rem 1.1rem; font-size: .85rem; }
+.acquisition-facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin: 1.1rem; font-size: .8rem; }
+.acquisition-facts dt { color: var(--portfolio-accent); margin-bottom: .3rem; }
+.acquisition-facts dd { margin: 0; }
+
+/* Publications and news retain their original chronological structure. */
+.research-item { border-color: var(--portfolio-line); }
+.publication-image-button { background: #f5f8fa; border: 1px solid #e3ecef; border-radius: 5px; }
+.publication-card .publication-role { display: inline-block; margin: 0 0 .75rem; padding: .2rem .55rem; border: 1px solid var(--portfolio-line); border-radius: 4px; background: #edf5f7; color: #255567; font-size: .7rem; font-weight: 600; }
+.publication-image-button img { background: #f5f8fa; }
+.news-list { border-left: 2px solid var(--portfolio-line); padding-left: 1.2rem; }
+.news-list li { position: relative; border-bottom-color: #e3ecef; }
+.news-list li::before { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--portfolio-accent); top: 1.45rem; left: -1.2rem; transform: translateX(-5px); }
+.news-list time { color: var(--portfolio-accent); font-weight: 600; }
+@media (max-width: 760px) {
+  .case-nav a { flex: 1 1 auto; justify-content: center; }
+  .acquisition-facts { grid-template-columns: 1fr; gap: .8rem; }
+  .profile-focus { padding: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { .case-nav a { transition: none; } }

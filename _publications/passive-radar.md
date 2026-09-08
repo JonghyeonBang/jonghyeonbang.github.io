@@ -3,6 +3,7 @@ layout: publication
 title: "Interference Suppression for an FM-Radio-Based Passive Radar Via Deep Convolutional Autoencoder"
 date: 2023-01-31
 display_date: 2023-01-31
+author_role: "Coauthor"
 venue: "IEEE Transactions on Aerospace and Electronic Systems"
 summary: "Suppressing interference components in the range-Doppler maps of FM-radio-based passive radar using a convolutional autoencoder trained with synthetic radar data."
 contributions:

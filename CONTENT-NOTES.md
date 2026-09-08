@@ -43,3 +43,11 @@ Public wording intentionally excludes: deformation already measured; alerting/ts
 
 
 Site-wide Last Update is stored in `_data/site_meta.yml` as the content update date. Update it when publishing content changes; do not replace it with the visitor date or a rebuild timestamp. Body copy avoids en/em dashes; headings and Current areas separators may retain them.
+
+
+Local refinement draft (not included in the approved baseline push 27b3630):
+- Tool list and publication author-role labels checked against the existing linked CV (Google Docs export, 2026-09-07).
+- Collapsible acquisition/validation text sourced from G11 PARAMETERS.txt and KB gates G-01/G-04/G-06. No quantitative resolution or absolute-radiometry claim added.
+- Visual styles are isolated in _sass/_portfolio-refinement.scss. Original site content, project figure scales, and photograph pixels retained.
+
+Daeha Scholarship news: June 2022 and US$1,500 supplied by user. English foundation name checked against linked CV. June 1 is only the sorting key; public date label is Jun.

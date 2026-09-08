@@ -210,3 +210,16 @@ hr {
   .site-last-update { font-size: .7rem; }
   .mobile-navigation { flex-shrink: 0; }
 }
+
+/* Give measured RDM and SAR outputs equal visual weight. */
+.case-result-block { margin-top: 2.4rem; padding-top: 1.5rem; border-top: 1px solid #d8dce0; scroll-margin-top: 2rem; }
+.greenland-case .case-result-block > h3 { font-size: 1.35rem; }
+.case-result-use { margin: 1.2rem 0 0; }
+.case-next-plans { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.case-next-plans > div { border-top: 2px solid #1350c1; padding-top: 1rem; }
+.case-next-plans p { font-size: .9rem; margin-bottom: 0; }
+@media (max-width: 760px) { .case-next-plans { grid-template-columns: 1fr; } }
+
+.instrument-annotated { position: relative; }
+.instrument-annotated > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.greenland-case .instrument-annotated > img { aspect-ratio: 3 / 4; object-fit: contain; }

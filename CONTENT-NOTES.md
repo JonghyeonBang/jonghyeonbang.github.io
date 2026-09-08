@@ -51,3 +51,5 @@ Local refinement draft (not included in the approved baseline push 27b3630):
 - Visual styles are isolated in _sass/_portfolio-refinement.scss. Original site content, project figure scales, and photograph pixels retained.
 
 Daeha Scholarship news: June 2022 and US$1,500 supplied by user. English foundation name checked against linked CV. June 1 is only the sorting key; public date label is Jun.
+
+2026-09-08: Power subsystem components supplied by user (solar panel, charge controller, battery, low-voltage disconnector). Diagram is a functional grouping, not a wiring schematic. Site geometry from KB site_qaarusuup.md. Elevation is DEM ground ellipsoidal height, not antenna height or height above sea level. SAR text now refers to the 600-second recording, not the 597-second processed aperture. Original research figures retained.

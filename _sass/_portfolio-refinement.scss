@@ -69,3 +69,16 @@
   .profile-focus { padding: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .case-nav a { transition: none; } }
+
+/* Signal and power paths converge on the same onboard computer. */
+.case-chain-powered .case-chain-computer { grid-column: 5; grid-row: 1 / 3; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+.case-power-system { grid-column: 1 / 4; grid-row: 2; border: 1px solid var(--portfolio-line); border-radius: 5px; padding: .85rem; background: #f1f7f8; }
+.case-power-title { display: block; color: var(--portfolio-accent); font-size: .85rem; margin-bottom: .65rem; }
+.case-power-parts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; }
+.case-power-parts > span { display: flex; align-items: center; border: 1px solid var(--portfolio-line); border-radius: 4px; background: #fff; padding: .5rem .65rem; font-size: .75rem; line-height: 1.4; }
+.case-power-arrow { grid-column: 4; grid-row: 2; }
+@media (max-width: 760px) {
+  .case-chain-powered .case-chain-computer { grid-column: 1; grid-row: 5; }
+  .case-power-system { grid-column: 1; grid-row: 7; }
+  .case-power-arrow { grid-column: 1; grid-row: 6; transform: rotate(-90deg); }
+}

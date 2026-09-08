@@ -54,7 +54,7 @@
       <figcaption>One transmitter of opportunity, two receiving paths: the direct signal is the reference, the reflection carries the slope.</figcaption>
     </figure>
     <h3 class="case-chain-title">The receiver chain</h3>
-    <div class="case-chain">
+    <div class="case-chain case-chain-powered">
       <div class="case-chain-pair">
         <div class="case-chain-box"><strong>Sky-facing antenna</strong><span>Direct signal → reference channel</span></div>
         <div class="case-chain-box"><strong>Slope-facing antenna</strong><span>Reflected signal → surveillance channel</span></div>
@@ -62,9 +62,15 @@
       <span class="case-chain-arrow" aria-hidden="true">→</span>
       <div class="case-chain-box"><strong>USRP B210</strong><span>Analogue signals → digital IQ, on one clock</span></div>
       <span class="case-chain-arrow" aria-hidden="true">→</span>
-      <div class="case-chain-box"><strong>Single-board computer</strong><span>Scheduled raw IQ recording, unattended</span></div>
+      <div class="case-chain-box case-chain-computer"><strong>Single-board computer</strong><span>Scheduled raw IQ recording, unattended</span></div>
+      <div class="case-power-system" role="group" aria-label="Power system supplying the single-board computer">
+        <strong class="case-power-title">Power system</strong>
+        <div class="case-power-parts"><span>Solar panel</span><span>Charge controller</span><span>Battery</span><span>Low-voltage disconnector</span></div>
+      </div>
+      <span class="case-chain-arrow case-power-arrow" aria-hidden="true">→</span>
     </div>
     <p>The sky-facing antenna receives the direct GNSS signal, while the slope-facing antenna receives its reflection. The USRP B210 converts these analogue electrical signals into synchronized digital IQ samples, which the single-board computer currently stores for later processing.</p>
+    <p>A solar panel, charge controller, battery, and low-voltage disconnector form the power system for unattended operation. The controller manages solar charging, the battery stores energy, and the disconnector cuts the load when battery voltage is low. The diagram shows the power supply to the single-board computer.</p>
 
   </section>
 
@@ -80,7 +86,7 @@
 
     <div class="case-result-block">
       <h3>Terrain-referenced SAR imagery</h3>
-      <p>I used a back-projection algorithm with ArcticDEM elevation to form a SAR image from 597 seconds of complex signal observations.</p>
+      <p>I used a back-projection algorithm with ArcticDEM elevation to form a SAR image from a 600-second recording.</p>
       <figure class="case-result-main">{% include project-figure.html file="sar-dem.png" alt="Measured G11 SAR intensity over ArcticDEM hillshade, showing focused returns along the opposite side of the fjord. A cyan line marks the DEM waterline." %}<figcaption>G11 SAR intensity over ArcticDEM · August 3, 2026. The triangle marks the receiver; the cyan line marks the DEM-derived waterline.</figcaption></figure>
       <p class="case-result-use"><strong>Potential applications.</strong> Terrain-referenced imagery connects the reflections to locations on the slope. Repeat acquisitions could support surface-change analysis and interferometric displacement estimation.</p>
     </div>
@@ -90,9 +96,18 @@
       <figure>{% include project-figure.html file="sar-terrain.png" alt="G11 SAR reconstruction using ArcticDEM elevation per image pixel, on the same intensity scale as the flat-ground output." %}<figcaption><strong>Terrain-aware reconstruction</strong><br>ArcticDEM elevation in back-projection.</figcaption></figure>
     </div>
     <details class="research-details">
-      <summary>Acquisition and validation details</summary>
-      <dl class="acquisition-facts"><div><dt>Receiver</dt><dd>USRP B210, two synchronized channels</dd></div><div><dt>Sampling</dt><dd>25 MS/s, 8-bit IQ</dd></div><div><dt>Recording</dt><dd>600 seconds per capture</dd></div></dl>
-      <p>Image formation was checked against a phase-scrambled control and with flat-ground versus ArcticDEM reconstructions. The range-compressed pulses were also checked against the Doppler-processing output.</p>
+      <summary>Acquisition and site geometry</summary>
+      <dl class="acquisition-facts">
+        <div><dt>Receiver</dt><dd>USRP B210</dd></div>
+        <div><dt>Sampling</dt><dd>25 MS/s</dd></div>
+        <div><dt>Recording</dt><dd>600 seconds per capture</dd></div>
+        <div><dt>Receiver latitude / longitude</dt><dd>64.36934° N, 51.38870° W</dd></div>
+        <div><dt>Receiver-site elevation</dt><dd>31.9 m ellipsoidal height (ArcticDEM ground elevation)</dd></div>
+        <div><dt>Surveillance antenna azimuth</dt><dd>332° ± 3° from true north</dd></div>
+        <div><dt>Surveillance antenna elevation</dt><dd>5° above horizontal</dd></div>
+        <div><dt>Distance to slope foot</dt><dd>About 1.36 km to the waterline along the antenna boresight</dd></div>
+        <div><dt>Distance to slope crest</dt><dd>About 2.57 km slant range (2.47 km horizontally)</dd></div>
+      </dl>
     </details>
     <p class="case-note">Figures retain the original research axes and scales. Terrain: ArcticDEM 2 m, v4.1. Select a figure to enlarge it.</p>
   </section>

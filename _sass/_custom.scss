@@ -201,3 +201,12 @@ hr {
 .about-field-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 65%; }
 .about-field-photo figcaption { width: 100%; max-width: none; margin: .6rem 0 0; font-size: .8rem; line-height: 1.6; text-align: left; color: #5c6268; }
 @media (max-width: 760px) { .about-field-photo img { aspect-ratio: 4 / 3; } }
+
+/* Keep the update date beside the name, wrapping on narrow screens. */
+.greedy-nav .site-title { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: .55rem; row-gap: .15rem; min-width: 0; }
+.site-last-update { white-space: nowrap; font-size: .65rem; font-weight: 400; color: #5c6268; }
+@media (max-width: 760px) {
+  .greedy-nav .site-title { flex-shrink: 1; margin-right: .5rem; line-height: 1.35; }
+  .site-last-update { font-size: .7rem; }
+  .mobile-navigation { flex-shrink: 0; }
+}

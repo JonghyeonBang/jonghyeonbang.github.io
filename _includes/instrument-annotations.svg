@@ -4,12 +4,12 @@
     <ellipse cx="413" cy="630" rx="109" ry="80"/>
     <ellipse cx="410" cy="1046" rx="109" ry="96"/>
     <ellipse cx="782" cy="1038" rx="75" ry="73" transform="rotate(-35 782 1038)"/>
-    <path d="M591 160 H622 M522 619 H614 M507 1005 L603 919 H627 M851 1024 H916"/>
+    <path d="M591 160 H622 M522 619 H614 M507 1005 L603 886 H627 M851 1024 H916"/>
   </g>
   <g fill="#c00000" stroke="#fff" stroke-width="9" stroke-linejoin="round" paint-order="stroke" font-family="Arial, sans-serif" font-size="52" font-weight="700">
     <text x="639" y="177">RHCP antenna</text>
     <text x="632" y="608">Single-board<tspan x="632" dy="62">computer</tspan></text>
-    <text x="645" y="935">USRP B210</text>
+    <text x="639" y="873">Software-defined<tspan x="639" dy="62">radio</tspan></text>
     <text x="930" y="1040">LHCP antenna</text>
   </g>
 </svg>

@@ -8,7 +8,7 @@
     button.addEventListener('click', () => {
       image.src = button.dataset.projectImage;
       image.alt = button.querySelector('img').alt;
-      caption.textContent = button.closest('figure').querySelector('figcaption').textContent;
+      caption.textContent = button.closest('figure').querySelector('figcaption').innerText.replace(/\s*\n+\s*/g, ' · ');
       previousOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       dialog.showModal();

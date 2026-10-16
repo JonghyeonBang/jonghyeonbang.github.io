@@ -53,3 +53,23 @@ Local refinement draft (not included in the approved baseline push 27b3630):
 Daeha Scholarship news: June 2022 and US$1,500 supplied by user. English foundation name checked against linked CV. June 1 is only the sorting key; public date label is Jun.
 
 2026-09-08: Power subsystem components supplied by user (solar panel, charge controller, battery, low-voltage disconnector). Diagram is a functional grouping, not a wiring schematic. Site geometry from KB site_qaarusuup.md. Elevation is DEM ground ellipsoidal height, not antenna height or height above sea level. SAR text now refers to the 600-second recording, not the 597-second processed aperture. Original research figures retained.
+
+## 2026-10-16 update
+
+- CV link (top menu, home button, About text) now points to the Google Drive PDF `1p2Gel0rcGHPrFgF7tYKHslObPG0OC7n6`, checked to open signed out. The old Google Doc link was editable by anyone with the link. To update the CV later, upload a new version of the same Drive file (Manage versions) so the link stays the same.
+- "USRP B210" renamed "Software-defined radio" on the instrument photo label, the receiver chain and its paragraph, at the user's request. The acquisition facts keep the model: "Software-defined radio (USRP B210)". The photo label is now two lines, with its leader line moved up, so it no longer touches "LHCP antenna".
+- Research outputs restructured at the user's request (2026-10-16, second pass): the "Building on the images" block and "The effect of terrain in image formation" comparison were removed. The NBRCS toggle now follows the range-Doppler block, and the interferometry toggle follows the SAR block. "Terrain-referenced SAR imagery" became "SAR imagery", and "terrain-referenced" was also dropped from the My role and About text. The words "day-to-day" and the ROI outline (black line) were dropped. sar-flat.png, sar-terrain.png and range-doppler.png stay in the repo but are no longer referenced.
+- User's decision: no paper titles, venues or numbers in the text; the site presents the work. Absolute NBRCS values (dB colour bar) may be shown (user, 2026-10-16), which overrides the 09-07 exclusion of absolute backscatter values for these maps.
+
+Figures, rendered on mull680 by `~/Jhbang_research/processing/greenland_out/pairs_25_gps/mk_web_figs_20261016b.py` (output `processing/website_figs_20261016/`). It supersedes `mk_web_figs_20261016.py`. The data, computation, colour maps and colour limits are those of the IGARSS 2027 paper figure scripts; only the presentation differs. No pixel editing.
+- rd-map.png ← `mk_fig1_rdmap.py` panel (a): G11 20260803 120011 `rdm_seg00.bin` (60 s segment), S/N above the noise floor, jet, −3 to 19 dB, 0–2.6 km; the paper's slope box is not drawn. Peak S/N printed: 18.29 dB. It replaces range-doppler.png on the page, at the user's request to match the paper colours.
+- nbrcs-rd.png, nbrcs-sar.png ← `mk_fig3_maps_1x3.py` panels (a) and (b), `~/sdr/elev/dump_real_G11_0803.npz`, viridis, shared limits −33.39 to −14.00 dB.
+- ifg-phase.png, ifg-coherence.png ← `mk_insar_figs.py` Fig. 2 panels (b) and (d), pair g11_120011_20260802_20260803. The phase uses hsv from −π to π and is shown only where coherence is at least 0.3, which covers 75 % of land pixels. Coherence is drawn in viridis, not the paper's gray, because gray cannot be read over the gray hillshade.
+- The maps follow the style of the site's SAR figure (sar_overlay.py panel 3): ArcticDEM 2 m hillshade, white 100 m contours, overlay alpha 0.75, a cyan DEM waterline, the receiver triangle, and axes in metres. All four maps share one frame (frame_extent of the interferogram lattice, E −2380 to 250 m). The north edge is cropped 60 m above the image box because the hillshade beyond it shows DEM striping. Patches without an NBRCS value are left transparent.
+- rd-map.png SHA256 2691b59318ff4360fd188aadb274a4e6951c364124bf52ce0cfff218069cd30f
+- nbrcs-rd.png SHA256 0efd2b0c8c581e12297a221a58bb239bef81b8c31489e3e07ba1bfdf9ea31846
+- nbrcs-sar.png SHA256 623e1cbaf2601c54b4a29208a2bc0a9692167eb900c89b0b35aa752968ac544e
+- ifg-phase.png SHA256 757f05dabbbf78ea25a13361520e443bc5c0a8f76e360382f0bbdb08f99ae9b2
+- ifg-coherence.png SHA256 1154eb2fefaa3fddf934e457aaf8220b47ec24176799e8e4e54b508918ce0a0f
+
+Lightbox captions now keep the break between a figure's title and its subtitle: "Title · subtitle" instead of "Titlesubtitle".

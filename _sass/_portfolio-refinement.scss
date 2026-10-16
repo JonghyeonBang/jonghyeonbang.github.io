@@ -82,3 +82,18 @@
   .case-power-system { grid-column: 1; grid-row: 7; }
   .case-power-arrow { grid-column: 1; grid-row: 6; transform: rotate(-90deg); }
 }
+
+/* Each further output follows the result it builds on, collapsed so the page stays short. */
+.case-toggle { margin-top: 1.4rem; border: 1px solid var(--portfolio-line); border-radius: 5px; background: #f8fbfc; }
+.case-toggle summary { cursor: pointer; padding: 1rem 1.15rem; font-size: 1rem; font-weight: 700; color: var(--portfolio-ink); }
+.case-toggle summary:focus-visible { outline: 3px solid #246b76; outline-offset: 4px; }
+.case-toggle[open] summary { border-bottom: 1px solid var(--portfolio-line); }
+.case-toggle-body { padding: 1.3rem 1.15rem 1.4rem; background: #fff; border-radius: 0 0 5px 5px; }
+.case-toggle-body > p:first-child { margin-top: 0; max-width: var(--case-measure); }
+.case-toggle-body .case-comparison { margin-top: 1.2rem; }
+.case-toggle-meta { margin: 1rem 0 0; font-size: .8rem; color: #5b6770; }
+.case-toggle-body .case-result-use { margin-top: 1rem; }
+@media (max-width: 760px) {
+  .case-toggle summary { padding: .9rem; }
+  .case-toggle-body { padding: 1rem .9rem 1.1rem; }
+}

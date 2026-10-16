@@ -47,7 +47,7 @@
         <p>I develop ground-based GNSS passive radar instruments and processing methods to observe unstable rock slopes in Greenland. My long-term goal is to measure how these slopes deform.</p>
         <p>The system uses signals from navigation satellites, so it needs no dedicated transmitter. My work connects reliable field recordings with radar observations that can support future slope monitoring.</p>
       </div>
-      <figure class="case-portrait"><div class="instrument-annotated"><img src="{{ '/assets/images/greenland/radar-instrument.jpg' | relative_url }}" alt="Radar instrument with red circles identifying the RHCP antenna at the top, the single-board computer in the upper enclosure, the USRP B210 below it, and the LHCP antenna pointing toward the slope." loading="lazy" width="1350" height="1800">{% include instrument-annotations.svg %}</div><figcaption>Two antenna paths, one synchronized receiver, and an onboard computer.</figcaption></figure>
+      <figure class="case-portrait"><div class="instrument-annotated"><img src="{{ '/assets/images/greenland/radar-instrument.jpg' | relative_url }}" alt="Radar instrument with red circles identifying the RHCP antenna at the top, the single-board computer in the upper enclosure, the software-defined radio below it, and the LHCP antenna pointing toward the slope." loading="lazy" width="1350" height="1800">{% include instrument-annotations.svg %}</div><figcaption>Two antenna paths, one synchronized receiver, and an onboard computer.</figcaption></figure>
     </div>
     <figure class="case-diagram">
       <img src="{{ '/assets/images/greenland/geometry-diagram.png' | relative_url }}" alt="Diagram: a moving GNSS satellite sends a direct signal down to the receiver on the near shore and also illuminates the rock slope across the fjord, whose reflection travels back to the same receiver." loading="lazy" width="1584" height="993">
@@ -60,7 +60,7 @@
         <div class="case-chain-box"><strong>Slope-facing antenna</strong><span>Reflected signal → surveillance channel</span></div>
       </div>
       <span class="case-chain-arrow" aria-hidden="true">→</span>
-      <div class="case-chain-box"><strong>USRP B210</strong><span>Analogue signals → digital IQ, on one clock</span></div>
+      <div class="case-chain-box"><strong>Software-defined radio</strong><span>Analogue signals → digital IQ, on one clock</span></div>
       <span class="case-chain-arrow" aria-hidden="true">→</span>
       <div class="case-chain-box case-chain-computer"><strong>Single-board computer</strong><span>Scheduled raw IQ recording, unattended</span></div>
       <div class="case-power-system" role="group" aria-label="Power system supplying the single-board computer">
@@ -69,36 +69,56 @@
       </div>
       <span class="case-chain-arrow case-power-arrow" aria-hidden="true">→</span>
     </div>
-    <p>The sky-facing antenna receives the direct GNSS signal, while the slope-facing antenna receives its reflection. The USRP B210 converts these analogue electrical signals into synchronized digital IQ samples, which the single-board computer currently stores for later processing.</p>
+    <p>The sky-facing antenna receives the direct GNSS signal, while the slope-facing antenna receives its reflection. The software-defined radio converts these analogue electrical signals into synchronized digital IQ samples, which the single-board computer currently stores for later processing.</p>
     <p>A solar panel, charge controller, battery, and low-voltage disconnector form the power system for unattended operation. The controller manages solar charging, the battery stores energy, and the disconnector cuts the load when battery voltage is low. The diagram shows the power supply to the single-board computer.</p>
 
   </section>
 
   <section id="results" class="case-section">
-    <div class="case-section-intro"><p class="section-label">04 / Research outputs</p><h2>Two ways to examine the slope.</h2><p>I processed the Qaarusuup field recordings into range-Doppler observations and terrain-referenced SAR imagery. Each provides a different view of the reflected GNSS signal.</p></div>
+    <div class="case-section-intro"><p class="section-label">04 / Research outputs</p><h2>Two ways to examine the slope.</h2><p>I processed the Qaarusuup field recordings into range-Doppler maps and SAR images. Each provides a different view of the reflected GNSS signal, and each leads to a further output.</p></div>
 
     <div id="workflow" class="case-result-block">
       <h3>Range-Doppler observations</h3>
       <p>I generated range-Doppler maps to examine reflections from the slope. The measured return is concentrated near 1.3 km of bistatic range, the extra path travelled by the reflected signal.</p>
-      <figure class="case-result-main">{% include project-figure.html file="range-doppler.png" alt="Measured G11 range-Doppler map showing a bright return near 1.3 km bistatic range and negative residual Doppler." %}<figcaption>GPS L5-Q / G11 · August 3, 2026 · 60-second integration. Power relative to the map peak; displayed bistatic range: 0 to 3 km.</figcaption></figure>
-      <p class="case-result-use"><strong>Potential applications.</strong> Tracking changes in the radar return could support rockfall detection. These observations also provide a basis for investigating bistatic radar cross-section (BRCS) estimation. Both applications require further validation.</p>
+      <figure class="case-result-main">{% include project-figure.html file="rd-map.png" alt="Measured G11 range-Doppler map, signal-to-noise ratio on a blue-to-red colour scale, showing a bright return near 1.3 km bistatic range just below zero Doppler." %}<figcaption>GPS L5-Q / G11 · August 3, 2026 · 60-second segment. Signal-to-noise ratio above the noise floor; displayed bistatic range: 0 to 2.6 km.</figcaption></figure>
+      <p class="case-result-use"><strong>Potential applications.</strong> Tracking changes in the radar return could support rockfall detection. These maps are also the input for estimating how strongly the slope scatters, shown below. Both applications require further validation.</p>
+      <details class="case-toggle">
+        <summary>NBRCS inversion: how strongly the slope scatters</summary>
+        <div class="case-toggle-body">
+          <p>I invert range-Doppler maps with ArcticDEM to estimate the normalized bistatic radar cross section (NBRCS) of each part of the slope. I compare the result with the same quantity derived from the SAR image.</p>
+          <div class="case-comparison">
+            <figure>{% include project-figure.html file="nbrcs-rd.png" alt="NBRCS of slope patches estimated from G11 range-Doppler maps, over ArcticDEM hillshade with the receiver and the DEM waterline, on a shared decibel colour scale." %}<figcaption><strong>From range-Doppler maps</strong><br>Inversion with ArcticDEM.</figcaption></figure>
+            <figure>{% include project-figure.html file="nbrcs-sar.png" alt="NBRCS of the same slope patches derived from the G11 SAR image, over ArcticDEM hillshade with the receiver and the DEM waterline, on the same decibel colour scale." %}<figcaption><strong>From the SAR image</strong><br>Same recording and colour scale.</figcaption></figure>
+          </div>
+          <p class="case-toggle-meta">G11 · August 3, 2026. Patches without a value are left blank.</p>
+          <p class="case-result-use"><strong>Potential applications.</strong> Scattering strength depends on surface roughness and material, so mapping it could help characterise the rock surface and follow how it changes. This requires further validation.</p>
+        </div>
+      </details>
     </div>
 
     <div class="case-result-block">
-      <h3>Terrain-referenced SAR imagery</h3>
+      <h3>SAR imagery</h3>
       <p>I used a back-projection algorithm with ArcticDEM elevation to form a SAR image from a 600-second recording.</p>
       <figure class="case-result-main">{% include project-figure.html file="sar-dem.png" alt="Measured G11 SAR intensity over ArcticDEM hillshade, showing focused returns along the opposite side of the fjord. A cyan line marks the DEM waterline." %}<figcaption>G11 SAR intensity over ArcticDEM · August 3, 2026. The triangle marks the receiver; the cyan line marks the DEM-derived waterline.</figcaption></figure>
-      <p class="case-result-use"><strong>Potential applications.</strong> Terrain-referenced imagery connects the reflections to locations on the slope. Repeat acquisitions could support surface-change analysis and interferometric displacement estimation.</p>
+      <p class="case-result-use"><strong>Potential applications.</strong> The image connects the reflections to locations on the slope. Repeat acquisitions could support surface-change analysis and interferometry, shown below.</p>
+      <details class="case-toggle">
+        <summary>Interferometry: comparing repeat SAR images</summary>
+        <div class="case-toggle-body">
+          <p>I pair two SAR images taken from the same satellite geometry at different times to form an interferogram. Its phase is sensitive to small movements of the surface, and coherence shows where that phase is reliable.</p>
+          <div class="case-comparison">
+            <figure>{% include project-figure.html file="ifg-phase.png" alt="Interferometric phase of the G11 pair from August 2 and 3, 2026, on a cyclic colour scale from minus pi to pi, over ArcticDEM hillshade with the receiver and the DEM waterline." %}<figcaption><strong>Interferometric phase</strong><br>Shown where coherence is at least 0.3.</figcaption></figure>
+            <figure>{% include project-figure.html file="ifg-coherence.png" alt="Coherence of the same G11 pair from 0 to 1, over ArcticDEM hillshade with the receiver and the DEM waterline; brighter colours mark more reliable phase." %}<figcaption><strong>Coherence</strong><br>Higher values mark more reliable phase.</figcaption></figure>
+          </div>
+          <p class="case-toggle-meta">G11 · images from August 2 and 3, 2026.</p>
+          <p class="case-result-use"><strong>Potential applications.</strong> Interferograms from a ground receiver could complement satellite radar, which revisits the slope less often, in monitoring slope movement. This requires further validation.</p>
+        </div>
+      </details>
     </div>
-    <div class="case-comparison-intro"><h3>The effect of terrain in image formation</h3><p>Including ArcticDEM elevation changes where the echoes are focused on the map. These reconstructions use the same recording and colour scale, with and without terrain correction.</p></div>
-    <div class="case-comparison">
-      <figure>{% include project-figure.html file="sar-flat.png" alt="G11 SAR reconstruction with a flat-ground assumption, displayed on the original common intensity scale." %}<figcaption><strong>Flat-ground assumption</strong><br>No terrain correction.</figcaption></figure>
-      <figure>{% include project-figure.html file="sar-terrain.png" alt="G11 SAR reconstruction using ArcticDEM elevation per image pixel, on the same intensity scale as the flat-ground output." %}<figcaption><strong>Terrain-aware reconstruction</strong><br>ArcticDEM elevation in back-projection.</figcaption></figure>
-    </div>
+
     <details class="research-details">
       <summary>Acquisition and site geometry</summary>
       <dl class="acquisition-facts">
-        <div><dt>Receiver</dt><dd>USRP B210</dd></div>
+        <div><dt>Receiver</dt><dd>Software-defined radio (USRP B210)</dd></div>
         <div><dt>Sampling</dt><dd>25 MS/s</dd></div>
         <div><dt>Recording</dt><dd>600 seconds per capture</dd></div>
         <div><dt>Receiver latitude / longitude</dt><dd>64.36934° N, 51.38870° W</dd></div>
@@ -114,7 +134,7 @@
 
   <section class="case-section case-role">
     <p class="section-label">05 / My role</p><h2>Engineering the connection between fieldwork and measurement.</h2>
-    <p>I develop and integrate the radar instrument, deploy it in the field, and develop the processing chain from raw IQ data to terrain-referenced radar imagery. This is the instrument-to-image work presented here within the broader NNA Greenland Hazards Project.</p>
+    <p>I develop and integrate the radar instrument, deploy it in the field, and develop the processing chain from raw IQ data to radar imagery and the outputs built on it. This is the instrument-to-image work presented here within the broader NNA Greenland Hazards Project.</p>
   </section>
 
   <section id="direction" class="case-section case-direction">

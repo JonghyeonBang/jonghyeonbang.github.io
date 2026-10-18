@@ -79,8 +79,8 @@
 
     <div id="workflow" class="case-result-block">
       <h3>Range-Doppler observations</h3>
-      <p>I generated range-Doppler maps to examine reflections from the slope. The return from the slope, marked by the white box, stands out clearly above the noise at about 1.3 km of bistatic range, the extra path travelled by the reflected signal.</p>
-      <figure class="case-result-main">{% include project-figure.html file="rd-map.png" alt="Measured range-Doppler map on a blue-to-red colour scale. A bright return between about 1.1 and 1.9 km of bistatic range, just below zero Doppler, is outlined by a white box labelled slope." %}<figcaption>One minute of recording, 3 August 2026. The white box marks the slope.</figcaption></figure>
+      <p>I generated range-Doppler maps to examine reflections from the slope. The return from the slope stands out clearly above the noise at about 1.3 km of bistatic range, the extra path travelled by the reflected signal.</p>
+      <figure class="case-result-main">{% include project-figure.html file="rd-map.png" alt="Measured range-Doppler map on a blue-to-red colour scale. A bright return between about 1.1 and 1.9 km of bistatic range, just below zero Doppler, is outlined by a white box labelled slope." %}<figcaption>One minute of recording, 3 August 2026.</figcaption></figure>
       <p>This shows that a receiver using only navigation-satellite signals can pick out the slope across the fjord. I also used these range-Doppler maps to estimate how strongly each part of the slope scatters.</p>
       <details class="case-toggle">
         <summary>NBRCS inversion: how strongly the slope scatters</summary>
@@ -102,11 +102,21 @@
       <details class="case-toggle">
         <summary>Interferometry: comparing repeat SAR images</summary>
         <div class="case-toggle-body">
-          <p>I pair two SAR images taken from the same satellite geometry at different times to form an interferogram. Its phase shifts with small movements of the surface, and coherence shows where that phase can be trusted. Over much of the slope the coherence stays high between the two images, so the phase there could be used to monitor slope movement. A ground receiver can repeat this far more often than satellite radar revisits, and it maps the slope face rather than single points. Unlike active ground-based radar, it is built from low-cost parts and needs no transmitter of its own. It could therefore complement existing tools for monitoring slope movement.</p>
+          <p>I pair two SAR images taken from the same satellite geometry at different times to form an interferogram.</p>
+          <ul class="case-toggle-list">
+            <li><strong>Phase</strong> shifts with small movements of the surface.</li>
+            <li><strong>Coherence</strong> shows where that phase can be trusted. It stays high over much of the slope, so the phase there could be used to monitor slope movement.</li>
+          </ul>
           <div class="case-comparison">
             <figure>{% include project-figure.html file="ifg-phase.png" alt="Interferometric phase of a pair of SAR images from 2 and 3 August 2026, on a blue-to-red colour scale from minus pi to pi, over ArcticDEM hillshade with the receiver and the DEM waterline." %}<figcaption><strong>Interferometric phase</strong><br>Shown where coherence is adequate.</figcaption></figure>
             <figure>{% include project-figure.html file="ifg-coherence.png" alt="Coherence of the same pair from 0 to 1, over ArcticDEM hillshade with the receiver and the DEM waterline; higher values mark more reliable phase." %}<figcaption><strong>Coherence</strong><br>Higher values mean more reliable phase.</figcaption></figure>
           </div>
+          <p>It could complement existing tools for monitoring slope movement, because a ground receiver</p>
+          <ul class="case-toggle-list">
+            <li>repeats the measurement far more often than satellite radar revisits,</li>
+            <li>maps the slope face rather than single points, and</li>
+            <li>is built from low-cost parts and needs no transmitter, unlike active ground-based radar.</li>
+          </ul>
         </div>
       </details>
     </div>

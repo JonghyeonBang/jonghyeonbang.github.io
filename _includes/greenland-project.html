@@ -79,38 +79,34 @@
 
     <div id="workflow" class="case-result-block">
       <h3>Range-Doppler observations</h3>
-      <p>I generated range-Doppler maps to examine reflections from the slope. The measured return is concentrated near 1.3 km of bistatic range, the extra path travelled by the reflected signal.</p>
-      <figure class="case-result-main">{% include project-figure.html file="rd-map.png" alt="Measured G11 range-Doppler map, signal-to-noise ratio on a blue-to-red colour scale, showing a bright return near 1.3 km bistatic range just below zero Doppler." %}<figcaption>GPS L5-Q / G11 · August 3, 2026 · 60-second segment. Signal-to-noise ratio above the noise floor; displayed bistatic range: 0 to 2.6 km.</figcaption></figure>
-      <p class="case-result-use"><strong>Potential applications.</strong> Tracking changes in the radar return could support rockfall detection. These maps are also the input for estimating how strongly the slope scatters, shown below. Both applications require further validation.</p>
+      <p>I generated range-Doppler maps to examine reflections from the slope. The return from the slope, marked by the white box, stands out clearly above the noise at about 1.3 km of bistatic range, the extra path travelled by the reflected signal.</p>
+      <figure class="case-result-main">{% include project-figure.html file="rd-map.png" alt="Measured range-Doppler map on a blue-to-red colour scale. A bright return between about 1.1 and 1.9 km of bistatic range, just below zero Doppler, is outlined by a white box labelled slope." %}<figcaption>One minute of recording, 3 August 2026. The white box marks the slope.</figcaption></figure>
+      <p>This shows that a receiver using only navigation-satellite signals can pick out the slope across the fjord. I also used these range-Doppler maps to estimate how strongly each part of the slope scatters.</p>
       <details class="case-toggle">
         <summary>NBRCS inversion: how strongly the slope scatters</summary>
         <div class="case-toggle-body">
-          <p>I invert range-Doppler maps with ArcticDEM to estimate the normalized bistatic radar cross section (NBRCS) of each part of the slope. I compare the result with the same quantity derived from the SAR image.</p>
+          <p>Combining the range-Doppler maps with ArcticDEM, I estimate the normalized bistatic radar cross section (NBRCS) of each part of the slope, which describes how strongly that patch of rock scatters the satellite signal. The maps below compare this estimate with the same quantity derived from the SAR image. Because scattering strength depends on the roughness and material of the rock surface, such maps could help characterise the surface and follow how it changes.</p>
           <div class="case-comparison">
-            <figure>{% include project-figure.html file="nbrcs-rd.png" alt="NBRCS of slope patches estimated from G11 range-Doppler maps, over ArcticDEM hillshade with the receiver and the DEM waterline, on a shared decibel colour scale." %}<figcaption><strong>From range-Doppler maps</strong><br>Inversion with ArcticDEM.</figcaption></figure>
-            <figure>{% include project-figure.html file="nbrcs-sar.png" alt="NBRCS of the same slope patches derived from the G11 SAR image, over ArcticDEM hillshade with the receiver and the DEM waterline, on the same decibel colour scale." %}<figcaption><strong>From the SAR image</strong><br>Same recording and colour scale.</figcaption></figure>
+            <figure>{% include project-figure.html file="nbrcs-rd.png" alt="NBRCS of slope patches estimated from range-Doppler maps, over ArcticDEM hillshade with the receiver and the DEM waterline, on a shared decibel colour scale." %}<figcaption><strong>From range-Doppler maps</strong><br>Blank patches have no estimate.</figcaption></figure>
+            <figure>{% include project-figure.html file="nbrcs-sar.png" alt="NBRCS of the same slope patches derived from the SAR image, over ArcticDEM hillshade with the receiver and the DEM waterline, on the same decibel colour scale." %}<figcaption><strong>From the SAR image</strong><br>Same recording and colour scale.</figcaption></figure>
           </div>
-          <p class="case-toggle-meta">G11 · August 3, 2026. Patches without a value are left blank.</p>
-          <p class="case-result-use"><strong>Potential applications.</strong> Scattering strength depends on surface roughness and material, so mapping it could help characterise the rock surface and follow how it changes. This requires further validation.</p>
         </div>
       </details>
     </div>
 
     <div class="case-result-block">
       <h3>SAR imagery</h3>
-      <p>I used a back-projection algorithm with ArcticDEM elevation to form a SAR image from a 600-second recording.</p>
-      <figure class="case-result-main">{% include project-figure.html file="sar-dem.png" alt="Measured G11 SAR intensity over ArcticDEM hillshade, showing focused returns along the opposite side of the fjord. A cyan line marks the DEM waterline." %}<figcaption>G11 SAR intensity over ArcticDEM · August 3, 2026. The triangle marks the receiver; the cyan line marks the DEM-derived waterline.</figcaption></figure>
-      <p class="case-result-use"><strong>Potential applications.</strong> The image connects the reflections to locations on the slope. Repeat acquisitions could support surface-change analysis and interferometry, shown below.</p>
+      <p>I used a back-projection algorithm with ArcticDEM elevation to form a SAR image from a 600-second recording. The image places the reflections on the slope itself and shows which parts of the slope return the signal.</p>
+      <figure class="case-result-main">{% include project-figure.html file="sar-map.png" alt="SAR intensity over ArcticDEM hillshade, shown on the part of the slope the antenna views, with the receiver triangle and the cyan DEM waterline across the fjord." %}<figcaption>SAR image, 3 August 2026, shown on the part of the slope the antenna views.</figcaption></figure>
+      <p>Linking each reflection to a location on the slope makes it possible to ask where a change happens. Repeat acquisitions could support surface-change analysis and interferometry, shown below.</p>
       <details class="case-toggle">
         <summary>Interferometry: comparing repeat SAR images</summary>
         <div class="case-toggle-body">
-          <p>I pair two SAR images taken from the same satellite geometry at different times to form an interferogram. Its phase is sensitive to small movements of the surface, and coherence shows where that phase is reliable.</p>
+          <p>I pair two SAR images taken from the same satellite geometry at different times to form an interferogram. Its phase shifts with small movements of the surface, and coherence shows where that phase can be trusted. Over much of the slope the coherence stays high between the two images, so the phase there could be used to monitor slope movement. A ground receiver can repeat this far more often than satellite radar revisits, and it maps the slope face rather than single points. Unlike active ground-based radar, it is built from low-cost parts and needs no transmitter of its own. It could therefore complement existing tools for monitoring slope movement.</p>
           <div class="case-comparison">
-            <figure>{% include project-figure.html file="ifg-phase.png" alt="Interferometric phase of the G11 pair from August 2 and 3, 2026, on a cyclic colour scale from minus pi to pi, over ArcticDEM hillshade with the receiver and the DEM waterline." %}<figcaption><strong>Interferometric phase</strong><br>Shown where coherence is at least 0.3.</figcaption></figure>
-            <figure>{% include project-figure.html file="ifg-coherence.png" alt="Coherence of the same G11 pair from 0 to 1, over ArcticDEM hillshade with the receiver and the DEM waterline; brighter colours mark more reliable phase." %}<figcaption><strong>Coherence</strong><br>Higher values mark more reliable phase.</figcaption></figure>
+            <figure>{% include project-figure.html file="ifg-phase.png" alt="Interferometric phase of a pair of SAR images from 2 and 3 August 2026, on a blue-to-red colour scale from minus pi to pi, over ArcticDEM hillshade with the receiver and the DEM waterline." %}<figcaption><strong>Interferometric phase</strong><br>Shown where coherence is adequate.</figcaption></figure>
+            <figure>{% include project-figure.html file="ifg-coherence.png" alt="Coherence of the same pair from 0 to 1, over ArcticDEM hillshade with the receiver and the DEM waterline; higher values mark more reliable phase." %}<figcaption><strong>Coherence</strong><br>Higher values mean more reliable phase.</figcaption></figure>
           </div>
-          <p class="case-toggle-meta">G11 · images from August 2 and 3, 2026.</p>
-          <p class="case-result-use"><strong>Potential applications.</strong> Interferograms from a ground receiver could complement satellite radar, which revisits the slope less often, in monitoring slope movement. This requires further validation.</p>
         </div>
       </details>
     </div>
@@ -144,7 +140,7 @@
     <div class="case-next case-next-plans">
       <div><h3>Reliable field operation</h3><p>Improve power, weather protection, and timing stability for unattended operation through the Arctic seasons.</p></div>
       <div><h3>Onboard processing and transfer</h3><p>Run the processing chain on the single-board computer and transmit processed outputs, ultimately including interferograms and validated displacement estimates.</p></div>
-      <div><h3>Repeat measurements</h3><p>Test phase coherence between acquisitions and develop the repeat-observation analysis needed to measure slope deformation.</p></div>
+      <div><h3>Repeat measurements</h3><p>Extend interferometry from a few days of acquisitions to a full year, and develop the analysis needed to turn repeated interferograms into measurements of slope deformation.</p></div>
     </div>
   </section>
 </article>

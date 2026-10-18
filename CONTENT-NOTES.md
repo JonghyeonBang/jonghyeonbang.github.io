@@ -73,3 +73,22 @@ Figures, rendered on mull680 by `~/Jhbang_research/processing/greenland_out/pair
 - ifg-coherence.png SHA256 1154eb2fefaa3fddf934e457aaf8220b47ec24176799e8e4e54b508918ce0a0f
 
 Lightbox captions now keep the break between a figure's title and its subtitle: "Title · subtitle" instead of "Titlesubtitle".
+
+## 2026-10-17 update (research outputs v3)
+
+- Research outputs rewritten in the order of what each output is, what it shows and why it matters. Section title: "What the first recordings show." The intro names the three things the radar must do: see the slope, place each reflection on it, and detect small changes between visits. "Potential applications" became "Why it matters". The repeated "requires further validation" sentences were removed at the user's request; the wording stays modal ("could") and claims no measured deformation. Technical captions (signal, SNR, displayed range) were shortened to plain captions; the technical facts stay in the Acquisition toggle.
+- Figures rendered by `processing/greenland_out/pairs_25_gps/mk_web_figs_20261017.py` (supersedes ...20261016b.py; same output folder).
+  - rd-map.png: the paper's slope box was added, computed verbatim from mk_fig1_rdmap.py, with a "slope" label. Control: the paper script, run to /tmp/figchk, prints the same box (1.139–1.871 km, Doppler −1.00 to 0.00 Hz, peak S/N 18.29 dB).
+  - sar-map.png replaces sar-dem.png. sar-dem.png is the old D1 deliverable, which showed returns over the fjord. The new image is the current fixed-ROI G11 20260803 120011 image (`~/sdr/ifg_build_20260909/npz_roi/g11_20260803_120011_dem.npz`). It is the lattice the interferograms use, displayed as in rebuild_roi3.sh: --mask roi_mask.npz, --abs-db 136 164, inferno, alpha 0.75. The mask is DISPLAY ONLY: it shows the slope the antenna views (Z > 20 m within the 307–357° sector). The returns over the sea were not removed by processing; they are simply not drawn. The caption says the image is "shown on the part of the slope the antenna views".
+  - ifg-phase.png: the colour map changed from hsv to jet, at the user's request, to match conventional InSAR figures.
+- rd-map.png SHA256 1a835d4a62257b8a395e5022f912d1526d82e64ff143927bdca1b813fb1c5019
+- sar-map.png SHA256 3d9681b17ed4ba4f5e876c1d3dc4db71bec27f2c9f371d453b6a4615639f21d0
+- nbrcs-rd.png SHA256 0efd2b0c8c581e12297a221a58bb239bef81b8c31489e3e07ba1bfdf9ea31846
+- nbrcs-sar.png SHA256 623e1cbaf2601c54b4a29208a2bc0a9692167eb900c89b0b35aa752968ac544e
+- ifg-phase.png SHA256 b2adbd778754af9e466c0e17836e0d455d5dd14b4fd1ca59e3a191bf1254dd25
+- ifg-coherence.png SHA256 1154eb2fefaa3fddf934e457aaf8220b47ec24176799e8e4e54b508918ce0a0f
+
+2026-10-18, research outputs text revised again at the user's request: the v3 framing ("What the first recordings show.", separate "Why it matters" boxes) was dropped. The section title is back to "Two ways to examine the slope." Each block now says what the result shows and, in the same prose, what it could make possible, with no separate applications box; the v3 figures are kept. Rockfall detection was then removed, at the user's request: it needs detection within 1 to 3 s, but the slope only appears in the range-Doppler map after about 60 s of integration.
+The Problem section keeps only the problem, at the user's request; the complement statement belongs to the interferometry output. Its last sentence names the gaps from section 01 that the ground receiver addresses (revisit, points rather than the slope face, no transmitter). It does not name the summer-only limit of UAV surveys, because year-round operation has not been shown yet.
+What next / Repeat measurements: "Test phase coherence between acquisitions" was out of date once section 04 showed coherence between acquisitions. It now reads "Extend interferometry from a few days of acquisitions to a full year, and develop the analysis needed to turn repeated interferograms into measurements of slope deformation."
+Interferometry complement sentence: low cost added at the user's request. Active ground-based InSAR performs better but draws more power and costs much more; the passive receiver is built from low-cost parts and needs no transmitter of its own.
